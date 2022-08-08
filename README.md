@@ -6,5 +6,15 @@
 > 
 > 这时我们只需要往tcp通道中放入最后一个字符，服务器即开始处理（其他协议同理）
 >
-* demo
-![](/test.gif)
+* server client
+```
+// nginx config by openrestry
+location /test {
+	content_by_lua_block {
+		ngx.header.content_type = "text/html"
+		ngx.say(ngx.now())
+	}
+}
+```
+* test
+* ![](/test.gif)
